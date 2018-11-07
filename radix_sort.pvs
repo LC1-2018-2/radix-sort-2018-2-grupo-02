@@ -146,8 +146,7 @@ MEASURE length(l)
   FORALL(l : list[nat], d : nat):
   permutations(l,merge_sort(l,d))
 
-% Lemma states that two lists sorted until the (d+1)th digit
-% that consist of sets of naturals smaller than or equal
+% Lemma states that two lists sorted until the (d+1)th digit that consist of sets of naturals smaller than or equal
 % and greater than or equal the other set, respctively,
 % and that are merged by their dth digit will give a
 % list that is sorted until the (d+1)th digit. 
