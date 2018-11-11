@@ -2427,8 +2427,7 @@
     (list type-decl nil list_adt nil)
     (boolean nonempty-type-decl nil booleans nil)
     (bool nonempty-type-eq-decl nil booleans nil)
-    (PRED type-eq-decl nil defined_types nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (PRED type-eq-decl nil defined_types nil) nil
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -3552,7 +3551,17 @@
    shostak))
  (merge_sort_d_sorts 0
   (merge_sort_d_sorts-1 nil 3747760065
-   ("" (measure-induct+ "length(l)" ("l")) (("" (postpone) nil nil))
+   ("" (measure-induct+ "length(l)" ("l"))
+    (("" (skeep)
+      (("" (expand "is_sorted_ud?" 1)
+        (("" (skeep)
+          (("" (expand "^" 1)
+            (("" (expand "nth" 1)
+              (("" (lift-if) (("" (postpone) nil nil)) nil)) nil))
+            nil))
+          nil))
+        nil))
+      nil))
     nil)
    ((TRUE const-decl "bool" booleans nil)
     (merge_preserves_sort formula-decl nil radix_sort nil)
